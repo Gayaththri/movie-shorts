@@ -26,8 +26,8 @@ export default function MovieDetails() {
       const newReviews = {
         ...reviews,
         [movieIdString]: [
-          { text: reviewText },
           ...(reviews[movieIdString] || []),
+          { text: reviewText },
         ],
       };
 
@@ -37,22 +37,27 @@ export default function MovieDetails() {
     }
   };
 
-  const handleDeleteReview = (index) => {
+  const handleDeleteReview = (index: number) => {
     const updatedReviews = { ...reviews };
-    updatedReviews[movieId].splice(index, 1);
+    const movieIdString = Array.isArray(movieId) ? movieId[0] : movieId;
+    const movieReviews = updatedReviews[movieIdString];
+    if (!movieReviews || movieReviews.length === 0) return; // If there are no reviews, do nothing
+    movieReviews.splice(index, 1);
     setReviews(updatedReviews);
     localStorage.setItem("movieReviews", JSON.stringify(updatedReviews));
   };
 
-  const handleEditReview = (index) => {
-    setReviewText(reviews[movieId][index].text);
+  const handleEditReview = (index: number) => {
+    const movieIdString = Array.isArray(movieId) ? movieId[0] : movieId;
+    setReviewText(reviews[movieIdString][index].text);
     setEditingIndex(index);
   };
 
   const handleSaveEdit = () => {
     if (reviewText.trim() !== "") {
       const updatedReviews = { ...reviews };
-      updatedReviews[movieId][editingIndex].text = reviewText;
+      const movieIdString = Array.isArray(movieId) ? movieId[0] : movieId;
+      updatedReviews[movieIdString][editingIndex].text = reviewText;
       setReviews(updatedReviews);
       localStorage.setItem("movieReviews", JSON.stringify(updatedReviews));
       setReviewText("");
