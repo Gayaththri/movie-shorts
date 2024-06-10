@@ -1,0 +1,22 @@
+ALTER TABLE "movies" ADD COLUMN "index" integer;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "budget" integer;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "genres" json;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "homepage" text;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "keywords" json;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "original_language" text;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "original_title" text;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "overview" text;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "popularity" integer;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "production_companies" json;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "production_countries" json;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "release_date" timestamp;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "revenue" integer;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "runtime" integer;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "spoken_languages" json;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "status" text;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "tagline" text;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "title" text;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "vote_average" integer;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "vote_count" integer;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "cast" json;--> statement-breakpoint
+ALTER TABLE "movies" ADD COLUMN "crew" json;

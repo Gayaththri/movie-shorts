@@ -1,0 +1,1 @@
+ALTER TABLE "movies" ALTER COLUMN "runtime" SET DATA TYPE numeric(8, 2);
