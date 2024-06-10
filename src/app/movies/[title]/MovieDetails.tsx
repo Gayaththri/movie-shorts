@@ -21,10 +21,16 @@ export default function MovieDetails() {
 
   const handleSubmitReview = () => {
     if (reviewText.trim() !== "") {
+      const movieIdString = String(movieId); // Explicitly convert to string
+
       const newReviews = {
         ...reviews,
-        [movieId]: [{ text: reviewText }, ...(reviews[movieId] || [])],
+        [movieIdString]: [
+          { text: reviewText },
+          ...(reviews[movieIdString] || []),
+        ],
       };
+
       setReviews(newReviews);
       localStorage.setItem("movieReviews", JSON.stringify(newReviews));
       setReviewText("");
